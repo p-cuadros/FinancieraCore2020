@@ -1,5 +1,6 @@
 *.suo
 *.user
+*.puml
 _ReSharper.*
 bin
 obj
