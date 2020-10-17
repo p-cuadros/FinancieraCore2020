@@ -15,14 +15,15 @@ Puede generar la base de datos desde la capa de persistencia utilizando los sigu
 dotnet tool install --global dotnet-ef
 ```
 ~~~
-<code>cd .\FinancieraCore2020.Datos.EF\</code>
+cd .\FinancieraCore2020.Datos.EF\
 ~~~
-<code>dotnet ef migrations add CrearFinancieraBD</code>
-```
-dotnet ef database update
-```
+`dotnet ef migrations add CrearFinancieraBD`
+
+`dotnet ef database update`
 
 Primero se debera configurar un gestor de base de datos relacional, configurar la cadena de conexion.
 
 ### MariaBD ###
+```
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=upt.2020 -d -p 3306:3306 mariadb
+```
