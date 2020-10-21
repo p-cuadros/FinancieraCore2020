@@ -39,3 +39,9 @@ Primero se debera configurar un gestor de base de datos relacional, configurar l
 ```bash
 docker run --name mariadb -e MYSQL_ROOT_PASSWORD=upt.2020 -d -p 3306:3306 mariadb
 ```
+
+### MS SQL Server ###
+
+```bash
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Tacna.2019' -p 16111:1433 -d mcr.microsoft.com/mssql/server
+```
