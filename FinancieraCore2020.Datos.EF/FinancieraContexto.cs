@@ -30,6 +30,8 @@ namespace FinancieraCore2020.Datos.EF
             //      , db => db.ServerVersion(
             //          new ServerVersion("10.4.11-mariadb"))
             //     );
+            optionsBuilder.UseSqlServer(
+                @"Server=(local),16111;Database=FinancieraBD;Integrated Security=False;User=sa;Password=Tacna.2019;");
         }
         /// <summary>
         /// Conjunto de datos cliente
