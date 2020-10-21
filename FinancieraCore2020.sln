@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancieraCore2020.Dominio", "FinancieraCore2020.Dominio\FinancieraCore2020.Dominio.csproj", "{929A7912-C51D-4005-8649-16922BEF91CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancieraCore2020.Datos.EF", "FinancieraCore2020.Datos.EF\FinancieraCore2020.Datos.EF.csproj", "{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{929A7912-C51D-4005-8649-16922BEF91CF}.Release|x64.Build.0 = Release|Any CPU
 		{929A7912-C51D-4005-8649-16922BEF91CF}.Release|x86.ActiveCfg = Release|Any CPU
 		{929A7912-C51D-4005-8649-16922BEF91CF}.Release|x86.Build.0 = Release|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Debug|x64.Build.0 = Debug|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Debug|x86.Build.0 = Debug|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x64.ActiveCfg = Release|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x64.Build.0 = Release|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x86.ActiveCfg = Release|Any CPU
+		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

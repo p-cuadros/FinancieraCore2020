@@ -54,10 +54,7 @@ namespace FinancieraCore2020.Datos.EF
         /// <param name="modelBuilder">Constructor del modelo</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cliente>(entidad =>
-            {
-                entidad.HasKey(k => k.IdCliente);
-            });
+            modelBuilder.ApplyConfiguration(new Mapeos.ClienteConfiguracion());
             modelBuilder.Entity<TipoMovimiento>(entidad =>
             {
                 entidad.HasKey(k => k.IdTipo);
