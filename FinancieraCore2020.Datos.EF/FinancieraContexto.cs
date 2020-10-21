@@ -25,11 +25,11 @@ namespace FinancieraCore2020.Datos.EF
             //      , db => db.ServerVersion(
             //          new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))
             //     );
-            optionsBuilder.UseMySql(
-                "Server=localhost;Database=financiera;User=root;Password=upt.2020;"
-                 , db => db.ServerVersion(
-                     new ServerVersion("10.4.11-mariadb"))
-                );
+            // optionsBuilder.UseMySql(
+            //     "Server=localhost;Database=financiera;User=root;Password=upt.2020;"
+            //      , db => db.ServerVersion(
+            //          new ServerVersion("10.4.11-mariadb"))
+            //     );
         }
         /// <summary>
         /// Conjunto de datos cliente
