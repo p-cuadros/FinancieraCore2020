@@ -8,6 +8,7 @@ namespace FinancieraCore2020.Datos.EF.Mapeos
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {
+            
             builder.HasKey(c => c.IdCliente);
             builder.Property(c => c.NombreCliente).HasMaxLength(200).IsRequired();
         }
