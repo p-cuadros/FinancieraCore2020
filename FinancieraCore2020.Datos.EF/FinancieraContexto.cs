@@ -55,14 +55,8 @@ namespace FinancieraCore2020.Datos.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new Mapeos.ClienteConfiguracion());
-            modelBuilder.Entity<TipoMovimiento>(entidad =>
-            {
-                entidad.HasKey(k => k.IdTipo);
-            });
-            modelBuilder.Entity<CuentaAhorro>(entidad =>
-            {
-                entidad.HasKey(k => k.IdCuenta);
-            });
+            modelBuilder.ApplyConfiguration(new Mapeos.TipoMovimientoConfiguracion());
+            modelBuilder.ApplyConfiguration(new Mapeos.CuentaAhorroConfiguracion());
             modelBuilder.Entity<MovimientoCuenta>(entidad =>
             {
                 entidad.HasKey(k => k.NumeroMovimiento);

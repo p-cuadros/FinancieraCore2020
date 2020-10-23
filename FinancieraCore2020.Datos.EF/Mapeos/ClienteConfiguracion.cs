@@ -8,9 +8,9 @@ namespace FinancieraCore2020.Datos.EF.Mapeos
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {
-            
             builder.HasKey(c => c.IdCliente);
-            builder.Property(c => c.NombreCliente).HasMaxLength(200).IsRequired();
+            builder.Property(c => c.IdCliente).HasColumnName("ID_CLIENTE").IsRequired();
+            builder.Property(c => c.NombreCliente).HasColumnName("NOM_CLIENTE").HasMaxLength(200).IsRequired();
         }
     }
 }
