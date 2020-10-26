@@ -19,7 +19,7 @@ namespace FinancieraCore2020.Dominio.Entidades
         /// <summary>
         /// 
         /// </summary>
-        public Cliente Propietario { get; private set; }
+        public virtual Cliente Propietario { get; private set; }
         /// <summary>
         /// 
         /// </summary>

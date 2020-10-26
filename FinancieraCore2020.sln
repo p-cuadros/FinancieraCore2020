@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancieraCore2020.Dominio"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancieraCore2020.Datos.EF", "FinancieraCore2020.Datos.EF\FinancieraCore2020.Datos.EF.csproj", "{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancieraCore2020.Distribucion.Api", "FinancieraCore2020.Distribucion.Api\FinancieraCore2020.Distribucion.Api.csproj", "{CCB27171-96A2-4DD9-8633-12E97EB7F210}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x64.Build.0 = Release|Any CPU
 		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x86.ActiveCfg = Release|Any CPU
 		{09C88D97-91D9-41C6-B8A6-E1732BC7E17E}.Release|x86.Build.0 = Release|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Debug|x64.Build.0 = Debug|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Debug|x86.Build.0 = Debug|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Release|x64.ActiveCfg = Release|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Release|x64.Build.0 = Release|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCB27171-96A2-4DD9-8633-12E97EB7F210}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

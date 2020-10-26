@@ -1,6 +1,5 @@
 using FinancieraCore2020.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Pomelo.EntityFrameworkCore.MySql.Storage;
 
 namespace FinancieraCore2020.Datos.EF
@@ -57,10 +56,8 @@ namespace FinancieraCore2020.Datos.EF
             modelBuilder.ApplyConfiguration(new Mapeos.ClienteConfiguracion());
             modelBuilder.ApplyConfiguration(new Mapeos.TipoMovimientoConfiguracion());
             modelBuilder.ApplyConfiguration(new Mapeos.CuentaAhorroConfiguracion());
-            modelBuilder.Entity<MovimientoCuenta>(entidad =>
-            {
-                entidad.HasKey(k => k.NumeroMovimiento);
-            });
+            modelBuilder.ApplyConfiguration(new Mapeos.MovimientoCuentaConfiguracion());
+            modelBuilder.Seed();
         }
            
     }
