@@ -13,8 +13,8 @@ namespace FinancieraCore2020.Datos.EF
             //     Cliente.Registrar("Martin Delgado")
             // );
             modelBuilder.Entity<TipoMovimiento>().HasData(
-                Cliente.Registrar("Retiro"),
-                Cliente.Registrar("Deposito")
+                TipoMovimiento.Crear(1,"Retiro"),
+                TipoMovimiento.Crear(2,"Deposito")
             );            
         }
     }

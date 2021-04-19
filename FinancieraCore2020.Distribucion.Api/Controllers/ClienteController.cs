@@ -13,7 +13,7 @@ namespace FinancieraCore2020.Distribucion.Api.Controllers
         public ClienteController()
         {
         }
-
+/*
         [HttpGet("")]
         public async Task<ActionResult<IEnumerable<TModel>>> GetTModels()
         {
@@ -57,6 +57,6 @@ namespace FinancieraCore2020.Distribucion.Api.Controllers
             await Task.Yield();
 
             return null;
-        }
+        }*/
     }
 }

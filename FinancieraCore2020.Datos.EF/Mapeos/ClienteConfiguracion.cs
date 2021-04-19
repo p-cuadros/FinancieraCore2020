@@ -9,7 +9,7 @@ namespace FinancieraCore2020.Datos.EF.Mapeos
         {
             builder.HasKey(c => c.IdCliente);
             builder.ToTable("CLIENTES").HasComment("Tabla de Clientes");
-            builder.Property(c => c.IdCliente).HasColumnName("ID_CLIENTE").HasComment("Identificador unico del cliente").IsRequired();
+            builder.Property(c => c.IdCliente).HasColumnName("ID_CLIENTE").HasComment("Identificador unico del cliente");
             builder.Property(c => c.NombreCliente).HasColumnName("NOM_CLIENTE").HasComment("Nombre del cliente").HasMaxLength(200).IsRequired();
         }
     }

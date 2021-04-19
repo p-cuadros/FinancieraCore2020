@@ -9,8 +9,9 @@ namespace FinancieraCore2020.Datos.EF.Mapeos
     {
         public void Configure(EntityTypeBuilder<TipoMovimiento> builder)
         {
+            builder.ToTable("TIPOS_MOVIMIENTO");
             builder.HasKey(c => c.IdTipo);
-            builder.Property(c => c.IdTipo).HasColumnName("ID_TIPO").IsRequired().ValueGeneratedOnAdd();
+            builder.Property(c => c.IdTipo).HasColumnName("ID_TIPO").ValueGeneratedOnAdd();
             builder.Property(c => c.DescripcionTipo).HasColumnName("DES_TIPO").HasMaxLength(100).IsRequired();
         }
     }

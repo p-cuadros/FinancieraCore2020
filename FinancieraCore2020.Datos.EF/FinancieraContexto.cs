@@ -25,7 +25,7 @@ namespace FinancieraCore2020.Datos.EF
             //          new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))
             //     );
             optionsBuilder.UseMySql(
-                "Server=localhost;Database=financiera;User=root;Password=upt.2020;"
+                "Server=localhost;Port=3307;Database=FinancieraBD;User=root;Password=upt.2020;"
                  , db => db.ServerVersion(
                      new ServerVersion("10.4.11-mariadb"))
                 );
