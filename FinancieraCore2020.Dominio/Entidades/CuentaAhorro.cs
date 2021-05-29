@@ -66,9 +66,21 @@ namespace FinancieraCore2020.Dominio.Entidades
                 NumeroCuenta = _numeroCuenta,
                 Propietario = _propietario,
                 IdPropietario = _propietario.IdCliente,
-                Tasa = _tasa
+                Tasa = _tasa,
+                Saldo = 0
             };
         }
+        
+        public void Depositar(decimal monto)
+        {
+            Saldo += monto;
+        }
+        
+        public void Retirar(decimal monto)
+        {
+            Saldo -= monto;
+        }
+        
 
     }
 }
