@@ -1,16 +1,15 @@
+using System;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using FinancieraCore2020.Dominio.Entidades;
 
-namespace FinancieraCore2020.Dominio.Tests.Steps
+namespace FinancieraCore2020.Tests.Steps
 {
     [Binding]
     public sealed class CuentaAhorroPruebas
     {
         private readonly ScenarioContext _scenarioContext;
         private CuentaAhorro _cuenta { get; set; }
-        private decimal _monto { get; set; }
-        private decimal _resultado { get; set; }
         private string _error { get; set; }
         private bool _es_error { get; set; } = false;
         
@@ -19,13 +18,13 @@ namespace FinancieraCore2020.Dominio.Tests.Steps
             _scenarioContext = scenarioContext;
         }
 
-        [Given("la nueva cuenta numero (.*) con tasa (.*)")]
-        public void DadoUnaCuenta(string numeroCuenta, decimal tasa)
+        [Given("la nueva cuenta numero (.*)")]
+        public void DadoUnaNuevaCuenta(string numeroCuenta)
         {
             try
             {
                 var cliente = Cliente.Registrar("Juan Perez");
-                _cuenta = CuentaAhorro.Aperturar(numeroCuenta, cliente, tasa);
+                _cuenta = CuentaAhorro.Aperturar(numeroCuenta, cliente, 1);
             }
             catch (System.Exception ex)
             {
@@ -34,14 +33,19 @@ namespace FinancieraCore2020.Dominio.Tests.Steps
             }            
         }
 
-        [When("con saldo S/ (.*)")]
-        [When("yo deposito S/ (.*)")]
+        // [Given("con saldo (.*)")]
+        // public void YConSaldo(decimal monto)
+        // {
+        //     CuandoYoDeposito(monto);
+        // }
+
+        [Given("con saldo (.*)")]
+        [When("deposito (.*)")]
         public void CuandoYoDeposito(decimal monto)
         {
             try
             {
                 _cuenta.Depositar(monto);
-                _resultado = _cuenta.Saldo;
             }
             catch (System.Exception ex)
             {
@@ -50,13 +54,13 @@ namespace FinancieraCore2020.Dominio.Tests.Steps
             }
         }
 
-        [When("yo retiro S/ (.*)")]
+        [When("retiro (.*)")]
         public void CuandoYoRetiro(decimal monto)
         {
             try
             {
                 _cuenta.Retirar(monto);
-                _resultado = _cuenta.Saldo;
+                //_resultado = _cuenta.Saldo;
             }
             catch (System.Exception ex)
             {
@@ -66,9 +70,9 @@ namespace FinancieraCore2020.Dominio.Tests.Steps
         }
 
         [Then("el saldo nuevo deberia ser (.*)")]
-        public void EntoncesElResultadoDeberiaSer(int resultado)
+        public void EntoncesElResultadoDeberiaSer(decimal resultado)
         {
-            Assert.AreEqual(_resultado, resultado);
+            Assert.AreEqual(_cuenta.Saldo, resultado);
         }        
 
         [Then("deberia ser error")]
