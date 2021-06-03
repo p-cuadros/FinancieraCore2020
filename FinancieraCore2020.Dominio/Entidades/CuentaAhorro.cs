@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace FinancieraCore2020.Dominio.Entidades
 {
     /// <summary>
-    /// 
+    /// Clase de dominio que representa una cuenta de ahorro
     /// </summary>
     public class CuentaAhorro
     {
