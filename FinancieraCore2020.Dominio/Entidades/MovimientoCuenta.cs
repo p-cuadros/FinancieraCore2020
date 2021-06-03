@@ -3,7 +3,7 @@ using System;
 namespace FinancieraCore2020.Dominio.Entidades
 {
     /// <summary>
-    /// Clase de dominio
+    /// Clase de dominio que representa el movimientos de la cuenta
     /// </summary>
     public class MovimientoCuenta
     {
