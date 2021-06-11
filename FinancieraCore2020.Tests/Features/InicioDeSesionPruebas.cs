@@ -35,35 +35,27 @@ namespace FinancieraCore2020.Tests.Features
             _usuario = usuario;
         }
         [Given("y la clave (.*)")]
-        public void DadoLaClave(string usuario)
+        public void DadoLaClave(string clave)
         {
-            _usuario = usuario;
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("//*[@id='pas']")).SendKeys("clave");
+            _clave = clave;
         }
 
-        [When("se hace click")]
+        [When("se hace click en iniciar sesion")]
         public void CuandoSeHaceClickEnLogin()
         {
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("/html/body/div/div[2]/div/form/div[3]/div/button")).Click();
         }
 
-        [When("retiro (.*)")]
-        public void CuandoYoRetiro(decimal monto)
+        [Then("el usuario permanece en la misma pagina")]
+        public void EntoncesElUsuarioPermaneceEnLaMismaPagina()
         {
-            try
-            {
-                _cuenta.Retirar(monto);
-                //_resultado = _cuenta.Saldo;
-            }
-            catch (System.Exception ex)
-            {
-                _es_error = true; 
-                _error = ex.Message;
-            }
-        }
-
-        [Then("el saldo nuevo deberia ser (.*)")]
-        public void EntoncesElResultadoDeberiaSer(decimal resultado)
-        {
-            Assert.AreEqual(_cuenta.Saldo, resultado);
+            Thread.Sleep(3000);
+            var boton = driver.FindElement(By.XPath("/html/body/div/div[2]/div/form/div[3]/div/button")).Text;
+            //driver.FindElement(By.XPath("//*[@id='pas']")).SendKeys("clave");
+            Assert.IsNotNull(boton);
         }        
     }
 }
