@@ -70,9 +70,16 @@ namespace FinancieraCore2020.Dominio.Entidades
                 Saldo = 0
             };
         }
+
+        public const string ERROR_MONTO_MENOR_IGUAL_A_CERO = "El monto no puede ser menor o igual a 0";
+        
         
         public void Depositar(decimal monto)
         {
+            if (monto   0)
+            {
+                
+            }
             Saldo += monto;
         }
         

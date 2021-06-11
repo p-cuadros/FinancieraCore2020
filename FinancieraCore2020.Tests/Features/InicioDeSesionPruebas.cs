@@ -22,7 +22,8 @@ namespace FinancieraCore2020.Tests.Features
             options.AddArguments("--disable-dev-shm-usage");
             var capabilities = options.ToCapabilities();
             var url = "http://localhost:4444/wd/hub";
-            driver = new RemoteWebDriver(new Uri(url), options);
+            //driver = new RemoteWebDriver(new Uri(url), options);
+            driver = new ChromeDriver("d:\\proyectos");
         }
 
         [Given("el usuario (.*)")]
@@ -30,22 +31,22 @@ namespace FinancieraCore2020.Tests.Features
         {
             driver.Url = "http://oficinavirtual.epstacna.com.pe/src/vista/v_login.php";
             driver.Manage().Window.Maximize();
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath("//*[@id='usu']")).SendKeys("usuario");
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id='usu']")).SendKeys(usuario);
             _usuario = usuario;
         }
         [Given("y la clave (.*)")]
         public void DadoLaClave(string clave)
         {
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath("//*[@id='pas']")).SendKeys("clave");
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//*[@id='pas']")).SendKeys(clave);
             _clave = clave;
         }
 
         [When("se hace click en iniciar sesion")]
         public void CuandoSeHaceClickEnLogin()
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             driver.FindElement(By.XPath("/html/body/div/div[2]/div/form/div[3]/div/button")).Click();
         }
 
@@ -53,9 +54,23 @@ namespace FinancieraCore2020.Tests.Features
         public void EntoncesElUsuarioPermaneceEnLaMismaPagina()
         {
             Thread.Sleep(3000);
-            var boton = driver.FindElement(By.XPath("/html/body/div/div[2]/div/form/div[3]/div/button")).Text;
+            ///var _esError = _driver.PageSource.Contains("Houssem Dellai");
+            var _boton = driver.FindElement(By.XPath("/html/body/div/div[2]/div/form/div[3]/div/button"));
+            string _valor = _boton.Text;
+            driver.Close();
             //driver.FindElement(By.XPath("//*[@id='pas']")).SendKeys("clave");
-            Assert.IsNotNull(boton);
+            Assert.IsNotNull(_valor);
         }        
+
+        [Then("se muestra mensaje de error en la pagina")]
+        public void EntoncesSemuestraMensajeDeErrorEnLaPagina()
+        {
+            Thread.Sleep(3000);
+            bool _esError = driver.PageSource.Contains("No se puede ejecutar");
+            driver.Close();
+            //driver.FindElement(By.XPath("//*[@id='pas']")).SendKeys("clave");
+            Assert.IsTrue(_esError);
+        }        
+
     }
 }
