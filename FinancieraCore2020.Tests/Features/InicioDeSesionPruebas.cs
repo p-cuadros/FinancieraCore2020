@@ -22,8 +22,8 @@ namespace FinancieraCore2020.Tests.Features
             options.AddArguments("--disable-dev-shm-usage");
             var capabilities = options.ToCapabilities();
             var url = "http://localhost:4444/wd/hub";
-            //driver = new RemoteWebDriver(new Uri(url), options);
-            driver = new ChromeDriver("d:\\proyectos");
+            driver = new RemoteWebDriver(new Uri(url), options);
+            //driver = new ChromeDriver("d:\\proyectos");
         }
 
         [Given("el usuario (.*)")]

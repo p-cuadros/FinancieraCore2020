@@ -76,15 +76,15 @@ namespace FinancieraCore2020.Dominio.Entidades
         
         public void Depositar(decimal monto)
         {
-            if (monto   0)
-            {
-                
-            }
+            if (monto <= 0)
+                throw new Exception (ERROR_MONTO_MENOR_IGUAL_A_CERO);
             Saldo += monto;
         }
         
         public void Retirar(decimal monto)
         {
+            if (monto <= 0)
+                throw new Exception (ERROR_MONTO_MENOR_IGUAL_A_CERO);
             Saldo -= monto;
         }
         
