@@ -1,0 +1,54 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+  - rama02
+  
+  pool:
+    vmImage: ubuntu-latest
+  
+  variables:
+    buildConfiguration: 'Release'
+  
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: 'Restaurar'
+    inputs:
+      command: 'restore'
+      feedsToUse: 'select'
+      vstsFeed: 'my-vsts-feed' # A series of numbers and letters
+  
+  - task: DotNetCoreCLI@2
+    displayName: 'Construir $(buildConfiguration'
+    inputs:
+      command: 'build'
+      arguments: '--configuration $(buildConfiguration)'
+  
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet test'
+    inputs:
+      command: 'test'
+      arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+      publishTestResults: true
+      projects: '**/test-library/*.csproj' # update with your test project directory
+  
+  - task: PublishCodeCoverageResults@1
+    displayName: 'Publish code coverage report'
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
+  
+  - task: DotNetCoreCLI@2
+    displayName: 'Publicar'
+    inputs:
+      command: 'publish'
+      publishWebProjects: True
+      arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+      zipAfterPublish: True
+  
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Build.ArtifactStagingDirectory)' 
+      artifactName: 'myWebsiteName'
